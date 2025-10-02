@@ -47,11 +47,18 @@ def _clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 # Các hàm giả lập cho các lệnh mới
-async def run_autotask(language: str):
-    from scripts.autotask import run_autotask as autotask_run
-    await autotask_run(language)
-
-
+async def run_name(language: str):
+    from scripts.name import run_name as name_run
+    await name_run(language)
+    
+async def run_dailynitro(language: str):
+    from scripts.dailynitro import run_dailynitro as dailynitro_run
+    await dailynitro_run(language)
+    
+async def run_dailyxp(language: str):
+    from scripts.dailyxp import run_dailyxp as dailyxp_run
+    await dailyxp_run(language)
+    
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
     print_border(messages[language], Fore.GREEN)
@@ -59,7 +66,9 @@ async def cmd_exit(language: str):
 
 # Danh sách lệnh menu
 SCRIPT_MAP = {
-    "autotask": run_autotask,
+    "name": run_name,
+    "dailynitro": run_dailynitro,
+    "dailyxp": run_dailyxp,
     "exit": cmd_exit
 }
 
