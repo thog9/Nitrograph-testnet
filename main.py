@@ -58,6 +58,10 @@ async def run_dailynitro(language: str):
 async def run_dailyxp(language: str):
     from scripts.dailyxp import run_dailyxp as dailyxp_run
     await dailyxp_run(language)
+
+async def run_mintagent(language: str):
+    from scripts.mintagent import run_mintagent as mintagent_run
+    await mintagent_run(language)
     
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
@@ -69,6 +73,7 @@ SCRIPT_MAP = {
     "name": run_name,
     "dailynitro": run_dailynitro,
     "dailyxp": run_dailyxp,
+    "mintagent": run_mintagent,
     "exit": cmd_exit
 }
 
@@ -80,6 +85,7 @@ def get_available_scripts(language):
             {"name": "1. Tự động cập nhật tên │ Nitrograph Testnet", "value": "name"},
             {"name": "2. Tự động nhận $NITRO [ DAILY STREAK ] │ Nitrograph Testnet", "value": "dailynitro"},
             {"name": "3. Tự động nhận XP hàng ngày │ Nitrograph Testnet", "value": "dailyxp"},
+            {"name": "4. Tự động mint Nitro Agent (NITROAGENT) │ Nitrograph Testnet", "value": "mintagent"},
 
             {"name": "X. Thoát", "value": "exit"},
         ],
@@ -87,7 +93,7 @@ def get_available_scripts(language):
             {"name": "1. Auto Update Name │ Nitrograph Testnet", "value": "name"},
             {"name": "2. Auto claim daily $NITRO [ DAILY STREAK ] │ Nitrograph Testnet", "value": "dailynitro"},
             {"name": "3. Auto claim daily XP │ Nitrograph Testnet", "value": "dailyxp"},
-
+            {"name": "4. Automatic mint Nitro Agent (NITROAGENT) │ Nitrograph Testnet", "value": "mintagent"},
 
             {"name": "X. Thoát", "value": "exit"},
         ]
@@ -200,3 +206,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
