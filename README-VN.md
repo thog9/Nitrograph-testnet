@@ -1,4 +1,4 @@
-# Zypher Testnet Scripts 🚀
+# Nitrograph Testnet Scripts 🚀
 
 Một tập lệnh Python được thiết kế để tự động hóa việc hoàn thành các nhiệm vụ trên Nitrograph Testnet
 
